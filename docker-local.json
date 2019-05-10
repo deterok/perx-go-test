@@ -1,0 +1,11 @@
+{
+    "db": {
+        "dialect": "postgres",
+        "dsn": "host=postgres sslmode=disable user=postgres dbname=testdb"
+    },
+    "code": {
+        "alphabet": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+        "size": 4
+    },
+    "listen_address": "0.0.0.0:8080"
+}

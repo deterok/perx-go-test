@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  core:
+    build:
+      context: ..
+      dockerfile: ./docker/core/Dockerfile
+
+    image: perx-go-test:v0
+
+    depends_on: [postgres]
+    networks: [backend, default]
+
+  postgres:
+    image: postgres
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_DB: "testdb"
+
+    volumes:
+      - /var/lib/postgresql/data
+
+    networks: [backend]
+
+networks:
+  backend:
