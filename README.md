@@ -1,6 +1,8 @@
 ## What this
 This is the solution of a test task at https://github.com/hollizzy/perx-go-test.
 
+Text of the task can be founded [there](TASK.md).
+
 ## Dependencies
 - go-1.*
 - docker-18.*
