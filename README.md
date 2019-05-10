@@ -65,3 +65,5 @@ This is the solution of a test task at https://github.com/hollizzy/perx-go-test.
     ```shell
     make down
     ```
+## API
+You can view the API [there](https://editor.swagger.io/?url=https://raw.githubusercontent.com/deterok/perx-go-test/master/openapi.yaml).
