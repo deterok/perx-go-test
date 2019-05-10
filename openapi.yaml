@@ -1,0 +1,69 @@
+openapi: 3.0.0
+info:
+  title: Keycodes generator
+  description: Simple soft for generating keycodes
+  contact:
+    email: vsuharnikov@gmail.com
+  license:
+    name: MIT
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/my_app/perx-go-test/1.0.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  /codes:
+    post:
+      summary: generates a code
+      description: Generates a new code.
+      operationId: genCode
+      responses:
+        201:
+          description: code created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Code'
+        500:
+          description: something is wrong
+  /codes/check:
+    post:
+      summary: check a code
+      description: Check a code.
+      operationId: checkCode
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCodeRequest'
+      responses:
+        200:
+          description: code checked
+        400:
+          description: code not exists
+        500:
+          description: something is wrong
+components:
+  schemas:
+    Code:
+      type: object
+      properties:
+        code:
+          maxLength: 4
+          minLength: 4
+          pattern: '[a-zA-Z0-9]*'
+          type: string
+          example: xyZ4
+        created_at:
+          type: string
+          format: date-time
+    CreateCodeRequest:
+      required:
+      - code
+      type: object
+      properties:
+        code:
+          maxLength: 4
+          minLength: 4
+          pattern: '[a-zA-Z0-9]*'
+          type: string
+          example: xyZ4
