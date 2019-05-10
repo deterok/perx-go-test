@@ -69,3 +69,8 @@ Text of the task can be founded [there](TASK.md).
     ```
 ## API
 You can view the API [there](https://editor.swagger.io/?url=https://raw.githubusercontent.com/deterok/perx-go-test/master/openapi.yaml).
+
+
+## Known bugs
+Echo server writes status code before encoding a JSON (10.05.2019, Open)
+https://github.com/labstack/echo/issues/1334
